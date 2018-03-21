@@ -10,9 +10,9 @@ export class UserDetailsComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.route.params.subscribe(p => {
-      if (p['id'] === 0) this.router.navigate(['not-found']);
-    });
+      this.route.params.subscribe(p => {
+        if (p['id'] === 0) this.router.navigate(['not-found']);
+      });
   }
 
   save() {

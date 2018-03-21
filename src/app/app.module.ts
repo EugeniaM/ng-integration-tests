@@ -12,6 +12,7 @@ import { VoterComponent } from './1-voter/voter.component';
 import { UsersComponent } from './users/users.component';
 import { HighlightDirective } from './highlight.directive';
 import { AppRoutingModule } from './app-routing.module';
+import { GreetComponent } from './greet/greet.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AppRoutingModule } from './app-routing.module';
     UserDetailsComponent,
     VoterComponent,
     UsersComponent,
-    HighlightDirective
+    HighlightDirective,
+    GreetComponent
   ],
   imports: [
     BrowserModule,

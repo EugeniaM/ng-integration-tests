@@ -16,15 +16,25 @@ class DirectiveHostComponent {
 describe('HighlightDirective', () => {
   let fixture: ComponentFixture<DirectiveHostComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [ DirectiveHostComponent, HighlightDirective ]
-    })
-    .compileComponents();
-  }));
+    });
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(DirectiveHostComponent);
     fixture.detectChanges();
+  });
+
+  it('should highlight the first element with cyan', () => {
+    const de = fixture.debugElement.queryAll(By.css('p'))[0];
+
+    expect(de.nativeElement.style.backgroundColor).toBe('cyan');
+  });
+
+  it('should highlight the second element with default color', () => {
+    const de = fixture.debugElement.queryAll(By.css('p'))[1];
+    const directive = de.injector.get(HighlightDirective);
+
+    expect(de.nativeElement.style.backgroundColor).toBe(directive.defaultColor);
   });
 });
